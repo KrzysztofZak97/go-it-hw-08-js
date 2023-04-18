@@ -13,9 +13,11 @@ const saveText = () => {
 };
 
 const getText = () => {
-  const formLoad = JSON.parse(localStorage.getItem('feedback-form-state'));
-  emailEl.value = formLoad.email || '';
-  textEl.value = formLoad.message;
+  if (localStorage.getItem('feedback-form-state')) {
+    const formLoad = JSON.parse(localStorage.getItem('feedback-form-state'));
+    emailEl.value = formLoad.email;
+    textEl.value = formLoad.message;
+  }
 };
 
 const delteText = () => {
