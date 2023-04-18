@@ -14,7 +14,7 @@ const saveText = () => {
 
 const getText = () => {
   const formLoad = JSON.parse(localStorage.getItem('feedback-form-state'));
-  emailEl.value = formLoad.email;
+  emailEl.value = formLoad.email || '';
   textEl.value = formLoad.message;
 };
 
